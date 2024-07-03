@@ -1,0 +1,107 @@
+@import 'styles/utils/breakpoint';
+
+.header {
+  width: 100%;
+  background-color: #17192D;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(tablet) {
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+  }
+
+  &__logo-container {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(tablet) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__buttons-container {
+    background-color: white;
+    padding-top: 30px;
+
+    @include breakpoint(tablet) {
+      background-color: initial;
+      padding-top: initial;
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__logo & svg {
+    width: 126px;
+    height: 17px;
+
+    @include breakpoint(tablet) {
+      width: 102.95px;
+      height: 14px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #023B78;
+    border: 1px solid #023B78;
+    padding: 24px 32px;
+    border-radius: 5px;
+    margin: 0 22px;
+    width: -webkit-fill-available;
+
+    @include breakpoint(tablet) {
+      padding: 4px 8px;
+      border-radius: 2px;
+      margin: initial;
+      width: auto;
+      justify-content: space-between;
+    }
+
+    > svg {
+      width: 21.11px;
+      height: 16.29px;
+  
+      @include breakpoint(tablet) {
+        width: 12.31px;
+        height: 9.5px;
+      }
+    }
+
+    &--clicked {
+      background-color: #2188FF;
+      border: 1px solid #2188FF;
+    }
+  }
+
+  &__button:not(:first-child) {
+    margin-top: 40px;
+
+    @include breakpoint(tablet) {
+      margin-top: initial;
+    }
+  }
+
+  &__label-button {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: white;
+    margin-left: 8px;
+
+    @include breakpoint(tablet) {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+    }
+  }
+}

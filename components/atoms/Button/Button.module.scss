@@ -1,0 +1,10 @@
+@import 'styles/utils/breakpoint';
+
+.button {
+  text-decoration: none;
+  outline: none;
+  word-break: keep-all;
+  display: inline-flex;
+  cursor: pointer;
+  text-align: center;
+}

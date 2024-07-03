@@ -1,4 +1,4 @@
-$breakpoints: {
+$breakpoints: (
   mobile: 320px,
   mobile-m: 375px,
   mobile-l: 425px,
@@ -7,17 +7,12 @@ $breakpoints: {
   desktop-m: 1280px,
   desktop-l: 1440px,
   desktop-xl: 1920px,
-};
+);
 
-@mixin breakpoint($breakpoint, $logic: false) {
-  @if ($logic) {
-    @media #{logic} and (min-width: map-get($map: $breakpoints, $key: breakpoint)) {
-      @content;
-    }
-  } @else {
-    @media (min-width: map-get($map: $breakpoints, $key: breakpoint)) {
-      @content;
-    }
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+    @content;
   }
 }
 

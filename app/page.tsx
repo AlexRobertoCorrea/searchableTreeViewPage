@@ -1,5 +1,14 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
+
+import Header from '@/components/organisms/Header/Header'
+import { TypeUnitEnum } from '@/enums/unit.enum'
 
 export default function Page() {
-  return <h1>Hello, Next.js!</h1>
+  const [unit, setUnit] = useState<TypeUnitEnum>(null)
+
+  return (
+    <Header unit={unit} setUnit={setUnit} />
+  )
 }
