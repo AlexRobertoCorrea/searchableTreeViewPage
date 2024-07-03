@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, MouseEvent } from 'react'
+import React, { useEffect, useState, MouseEvent } from 'react'
 import classNames from 'classnames'
 
 import Button from '@/components/atoms/Button/Button'
@@ -14,11 +14,13 @@ import styles from './Header.module.scss'
 
 const Header: React.FC<PropsHeader> = ({ unit, setUnit }) => {
   const viewport = useMediaQuery()
+  const [isMobile, setIsMobile] = useState(true)
 
   useEffect(() => {
-    const isMobile = viewport === VIEWPORTS.MOBILE
+    const isMobileScreen = viewport === VIEWPORTS.MOBILE
+    setIsMobile(isMobileScreen)
 
-    if (!isMobile) {
+    if (!isMobileScreen) {
       setUnit(UNITS.APEX)
     } else {
       setUnit(null)
@@ -29,40 +31,62 @@ const Header: React.FC<PropsHeader> = ({ unit, setUnit }) => {
     setUnit(event.currentTarget.id)
   }
 
+  const resetUnit = () => {
+    setUnit(null)
+  }
+
   return (
     <header className={styles['header']}>
-      <div className={styles['header__logo-container']}>
-        <Icons.logo className={styles['header__logo']} />
-      </div>
-      <div className={styles['header__buttons-container']}>
-        <Button
-          className={classNames(styles['header__button'],
-             { [styles['header__button--clicked']]: unit === UNITS.APEX })}
-          onClick={updateUnit}
-          id={UNITS.APEX}
-        >
-          <Icons.goldIcon />
-          <span className={styles['header__label-button']}>{'Apex Unit'}</span>
-        </Button>
-        <Button
-          className={classNames(styles['header__button'],
-             { [styles['header__button--clicked']]: unit === UNITS.TOBIAS })}
-          onClick={updateUnit}
-          id={UNITS.TOBIAS}
-        >
-          <Icons.goldIcon />
-          <span className={styles['header__label-button']}>{'Tobias Unit'}</span>
-        </Button>
-        <Button
-          className={classNames(styles['header__button'],
-             { [styles['header__button--clicked']]: unit === UNITS.JAGUAR })}
-          onClick={updateUnit}
-          id={UNITS.JAGUAR}
-        >
-          <Icons.goldIcon />
-          <span className={styles['header__label-button']}>{'Jaguar Unit'}</span>
-        </Button>
-      </div>
+      {
+        (!isMobile || (isMobile && !unit))
+        && (
+          <>
+            <div className={styles['header__logo-container']}>
+              <Icons.logo className={styles['header__logo']} />
+            </div>
+            <div className={styles['header__buttons-container']}>
+              <Button
+                className={classNames(styles['header__button'],
+                  { [styles['header__button--clicked']]: unit === UNITS.APEX })}
+                onClick={updateUnit}
+                id={UNITS.APEX}
+              >
+                <Icons.goldIcon />
+                <span className={styles['header__label-button']}>{'Apex Unit'}</span>
+              </Button>
+              <Button
+                className={classNames(styles['header__button'],
+                  { [styles['header__button--clicked']]: unit === UNITS.TOBIAS })}
+                onClick={updateUnit}
+                id={UNITS.TOBIAS}
+              >
+                <Icons.goldIcon />
+                <span className={styles['header__label-button']}>{'Tobias Unit'}</span>
+              </Button>
+              <Button
+                className={classNames(styles['header__button'],
+                  { [styles['header__button--clicked']]: unit === UNITS.JAGUAR })}
+                onClick={updateUnit}
+                id={UNITS.JAGUAR}
+              >
+                <Icons.goldIcon />
+                <span className={styles['header__label-button']}>{'Jaguar Unit'}</span>
+              </Button>
+            </div>
+          </>
+        )
+      }
+      {
+        isMobile && unit
+        && (
+          <div className={styles['header__assets-container']}>
+            <Button className={styles['header__assets-button']} onClick={resetUnit}>
+              <div className={styles['header__assets-arrow']}>{'<'}</div>
+            </Button>
+            <h3 className={styles['header__assets-title']}>{'Assets'}</h3>
+          </div>
+        )
+      }
     </header>
   )
 }
