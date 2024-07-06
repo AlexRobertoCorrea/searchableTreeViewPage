@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "eslint": "eslint **/*.{ts,tsx} --ignore-pattern .prettierignore",
+    "eslint:fix": "eslint --fix **/*.{ts,tsx} --ignore-pattern .prettierignore",
+    "prettier": "prettier --ignore-path .prettierignore --check .",
+    "prettier:fix": "prettier --ignore-path .prettierignore --write .",
+    "lint": "yarn eslint && yarn prettier",
+    "lint:fix": "yarn eslint:fix && yarn prettier:fix"
   },
   "dependencies": {
     "classnames": "^2.5.1",

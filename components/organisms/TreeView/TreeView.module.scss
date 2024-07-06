@@ -1,0 +1,39 @@
+$border-color: #e1e1e1;
+$border-width: 1px;
+$gap: clamp(16px, 4vh, 1.5em);
+$top-gap: calc($gap / 2);
+
+.tree-view {
+  list-style: none;
+  margin-left: calc($gap / 2);
+
+  &__container {
+    position: relative;
+    padding: $top-gap 0 0 $gap;
+
+    &:last-child {
+      &::before {
+        content: '';
+        border-left: $border-width solid $border-color;
+        border-bottom: $border-width solid $border-color;
+        border-bottom-left-radius: 4px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: calc($gap / 1.5);
+        height: calc($top-gap + 1em / 2);
+      }
+    }
+
+    &:not(:last-child) {
+      // horizontal connector line
+      background-image: linear-gradient(0, $border-color, $border-color);
+      background-repeat: no-repeat;
+      background-position: 0 calc($top-gap + 1em / 2);
+      background-size: calc($gap / 1.5) $border-width;
+
+      // vertical connector line
+      border-left: $border-width solid $border-color;
+    }
+  }
+}

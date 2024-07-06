@@ -1,0 +1,81 @@
+@import 'styles/utils/breakpoint';
+
+.dashboard {
+  @include breakpoint(desktop) {
+    border: 8px solid #d8dfe6;
+    height: 100vh;
+  }
+
+  &__search-container {
+    margin: 16px;
+
+    @include breakpoint(desktop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px 18px;
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #24292f;
+  }
+
+  &__unit-name {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #77818c;
+  }
+
+  // &__buttons {
+  //   display: flex;
+  //   align-items: center;
+  //   margin-top: 8px;
+  //   gap: 8px;
+  // }
+
+  // &__button {
+  //   display: flex;
+  //   align-items: center;
+  //   font-size: 14px;
+  //   font-weight: 600;
+  //   line-height: 20px;
+  //   color: #77818C;
+  //   background-color: #FFFFFF;
+  //   border: 1px solid #D8DFE6;
+  //   padding: 6px 16px 6px 14px;
+  //   border-radius: 3px;
+  //   gap: 6px;
+
+  //   > svg {
+  //     > path {
+  //       fill: #2188FF;
+  //     }
+  //   }
+
+  //   &--clicked {
+  //     color: #FFFFFF;
+  //     background-color: #2188FF;
+
+  //     > svg {
+  //       > path {
+  //         fill: #FFFFFF;
+  //       }
+  //     }
+  //   }
+  // }
+
+  &__border {
+    border: 1px solid #eaeef2;
+  }
+}

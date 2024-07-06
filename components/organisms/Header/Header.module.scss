@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  background-color: #17192D;
+  background-color: #17192d;
   display: flex;
   flex-direction: column;
 
@@ -52,8 +52,8 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    background-color: #023B78;
-    border: 1px solid #023B78;
+    background-color: #023b78;
+    border: 1px solid #023b78;
     padding: 24px 32px;
     border-radius: 5px;
     margin: 0 22px;
@@ -70,7 +70,7 @@
     > svg {
       width: 21.11px;
       height: 16.29px;
-  
+
       @include breakpoint(tablet) {
         width: 12.31px;
         height: 9.5px;
@@ -78,8 +78,8 @@
     }
 
     &--clicked {
-      background-color: #2188FF;
-      border: 1px solid #2188FF;
+      background-color: #2188ff;
+      border: 1px solid #2188ff;
     }
   }
 
@@ -106,14 +106,14 @@
   }
 
   &__assets-container {
-    background-color: #17192D;
+    background-color: #17192d;
     display: flex;
     align-items: center;
   }
 
   &__assets-button {
-    background-color: #17192D;
-    border: 1px solid #17192D;
+    background-color: #17192d;
+    border: 1px solid #17192d;
     color: white;
     border-radius: 0;
     margin-left: 25px;

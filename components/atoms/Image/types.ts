@@ -1,6 +1,6 @@
 export interface PropsImage {
-  src: string,
-  alt: string,
+  src: string
+  alt: string
   width: number
   height: number
 }

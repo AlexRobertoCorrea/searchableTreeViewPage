@@ -1,3 +1,3 @@
 export interface PropsSvg {
-  className?: string,
+  className?: string
 }

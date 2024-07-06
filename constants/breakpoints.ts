@@ -4,13 +4,13 @@ const BREAKPOINTS = {
   MD: 768,
   LG: 992,
   XL: 1200,
-  XXL: 1700
+  XXL: 1700,
 }
 
 const VIEWPORTS = {
   TABLET: 'TABLET',
   MOBILE: 'MOBILE',
-  DESKTOP: 'DESKTOP'
+  DESKTOP: 'DESKTOP',
 }
 
 export { BREAKPOINTS, VIEWPORTS }

@@ -9,7 +9,6 @@ $breakpoints: (
   desktop-xl: 1920px,
 );
 
-
 @mixin breakpoint($breakpoint) {
   @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
     @content;

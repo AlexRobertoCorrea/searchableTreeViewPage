@@ -1,7 +1,12 @@
 const UNITS = {
   APEX: 'APEX',
   TOBIAS: 'TOBIAS',
-  JAGUAR: 'JAGUAR'
+  JAGUAR: 'JAGUAR',
 }
 
-export { UNITS }
+const SENSOR_TYPES = {
+  energy: 'energy',
+  vibration: 'vibration',
+}
+
+export { UNITS, SENSOR_TYPES }

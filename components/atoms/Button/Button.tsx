@@ -4,7 +4,12 @@ import classNames from 'classnames'
 import styles from './Button.module.scss'
 import { PropsButton } from './types'
 
-const Button: React.FC<PropsButton> = ({ children, className, onClick, id }) => {
+const Button: React.FC<PropsButton> = ({
+  children,
+  className,
+  onClick,
+  id,
+}) => {
   const btnClass = classNames(className, styles['button'])
 
   return (
