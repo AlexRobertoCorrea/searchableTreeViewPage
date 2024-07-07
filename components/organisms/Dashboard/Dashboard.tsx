@@ -18,6 +18,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
   const viewport = useMediaQuery()
   const assetsTreeViewData = useAssetsTreeViewDataService(unit)
   const [isMobile, setIsMobile] = useState(true)
+  const [isTablet, setIsTablet] = useState(false)
   const [component, setComponent] = useState({})
   const [treeViewData, setTreeViewData] = useState([])
   const [energySelected, setEnergySelected] = useState(false)
@@ -42,6 +43,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
 
   useEffect(() => {
     setIsMobile(viewport === VIEWPORTS.MOBILE)
+    setIsTablet(viewport === VIEWPORTS.TABLET)
   }, [viewport])
 
   useEffect(() => {
@@ -52,7 +54,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
 
   return (
     <>
-      {isLoading && (
+      {isLoading && !isMobile && (
         <h1 className={styles['dashboard__loading']}>
           {'Carregando dados. Esse processo pode demorar um pouco...'}
         </h1>
@@ -108,7 +110,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
                 component={component}
               />
             </div>
-            <ComponentDetail component={component} />
+            { !isTablet && <ComponentDetail component={component} />}            
           </div>
         </div>
       )}

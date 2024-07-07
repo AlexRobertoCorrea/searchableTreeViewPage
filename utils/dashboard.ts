@@ -71,6 +71,10 @@ const filterByQuery = (arr, query) => {
 }
 
 const filterBySensor = (arr, vibrationSelected, energySelected) => {
+  if (vibrationSelected === energySelected) {
+    return arr
+  }
+
   return arr.reduce((acc, item) => {
     if (item.children?.length) {
       const filtered = filterBySensor(
@@ -87,8 +91,7 @@ const filterBySensor = (arr, vibrationSelected, energySelected) => {
     const { ...itemWithoutChildren } = item
 
     return (vibrationSelected && item.sensorType === 'vibration') ||
-      (energySelected && item.sensorType === 'energy') ||
-      vibrationSelected === energySelected
+      (energySelected && item.sensorType === 'energy')
       ? [...acc, itemWithoutChildren]
       : acc
   }, [])
