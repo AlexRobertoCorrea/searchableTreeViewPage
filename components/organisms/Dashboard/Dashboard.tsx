@@ -9,7 +9,7 @@ import useAssetsTreeViewDataService from '@/hooks/useAssetsTreeViewData'
 import { VIEWPORTS } from '@/constants/breakpoints'
 import { SENSOR_TYPES } from '@/constants/units'
 import { POSITION_ICON } from '@/components/atoms/Input/Input'
-import { filterBy, getUnitName } from '@/utils/dashboard'
+import { filterByQuery, filterBySensor, getUnitName } from '@/utils/dashboard'
 import { PropsDashboard } from './types'
 
 import styles from './Dashboard.module.scss'
@@ -25,7 +25,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
   const isLoading = Boolean(!assetsTreeViewData.length)
 
   const onQueryChange = (event) => {
-    setTreeViewData(filterBy(assetsTreeViewData, event.target.value))
+    setTreeViewData(filterByQuery(assetsTreeViewData, event.target.value))
   }
 
   const updateSensor = (event) => {
@@ -43,6 +43,12 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
   useEffect(() => {
     setIsMobile(viewport === VIEWPORTS.MOBILE)
   }, [viewport])
+
+  useEffect(() => {
+    setTreeViewData(
+      filterBySensor(assetsTreeViewData, vibrationSelected, energySelected)
+    )
+  }, [vibrationSelected, energySelected])
 
   return (
     <>

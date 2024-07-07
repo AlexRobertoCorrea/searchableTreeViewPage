@@ -50,11 +50,11 @@ const getTreeViewData = (locations, assets) => {
   })
 }
 
-const filterBy = (arr, query) => {
+const filterByQuery = (arr, query) => {
   return query
     ? arr.reduce((acc, item) => {
         if (item.children?.length) {
-          const filtered = filterBy(item.children, query)
+          const filtered = filterByQuery(item.children, query)
 
           if (filtered.length) {
             return [...acc, { ...item, children: filtered }]
@@ -68,6 +68,30 @@ const filterBy = (arr, query) => {
           : acc
       }, [])
     : arr
+}
+
+const filterBySensor = (arr, vibrationSelected, energySelected) => {
+  return arr.reduce((acc, item) => {
+    if (item.children?.length) {
+      const filtered = filterBySensor(
+        item.children,
+        vibrationSelected,
+        energySelected
+      )
+
+      if (filtered.length) {
+        return [...acc, { ...item, children: filtered }]
+      }
+    }
+
+    const { ...itemWithoutChildren } = item
+
+    return (vibrationSelected && item.sensorType === 'vibration') ||
+      (energySelected && item.sensorType === 'energy') ||
+      vibrationSelected === energySelected
+      ? [...acc, itemWithoutChildren]
+      : acc
+  }, [])
 }
 
 const getUnitName = (unit: string) => {
@@ -84,6 +108,7 @@ export {
   getChildren,
   getChildrenAssets,
   getTreeViewData,
-  filterBy,
+  filterByQuery,
+  filterBySensor,
   getUnitName,
 }
