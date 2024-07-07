@@ -17,7 +17,7 @@ import styles from './Dashboard.module.scss'
 const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
   const viewport = useMediaQuery()
   const [isMobile, setIsMobile] = useState(true)
-  // const [company, setCompany] = useState({})
+  const [component, setComponent] = useState({})
   const [treeViewData, setTreeViewData] = useState([])
   const [energySelected, setEnergySelected] = useState(false)
   const [vibrationSelected, setVibrationSelected] = useState(false)
@@ -69,6 +69,36 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
     //         "name": "Fan - External",
     //         "parentId": null,
     //         "sensorId": "MTC052",
+    //         "sensorType": null,
+    //         "status": "operating",
+    //         "gatewayId": "QHI640",
+    //         "locationId": null,
+    //         children: [{
+    //           "id": "656a07cdc50ec9001e84167b",
+    //           "name": "MOTOR RT COAL AF01",
+    //           "parentId": "656a07c3f2d4a1001e2144c5",
+    //           "sensorId": "FIJ309",
+    //           "sensorType": "energy",
+    //           "status": "operating",
+    //           "gatewayId": "FRH546",
+    //           children: null
+    //         }]
+    //       }]
+    //     }]
+    //   },
+    //   {
+    //     "id": "65674204664c41001e91ecb4",
+    //     "name": "PRODUCTION AREA - RAW MATERIAL",
+    //     "parentId": null,
+    //     children: [{
+    //       "id": "656a07b3f2d4a1001e2144bf",
+    //       "name": "CHARCOAL STORAGE SECTOR",
+    //       "parentId": "65674204664c41001e91ecb4",
+    //       children: [{
+    //         "id": "656734821f4664001f296973",
+    //         "name": "Fan - External",
+    //         "parentId": null,
+    //         "sensorId": "MTC052",
     //         "sensorType": "energy",
     //         "status": "operating",
     //         "gatewayId": "QHI640",
@@ -79,13 +109,13 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
     //           "parentId": "656a07c3f2d4a1001e2144c5",
     //           "sensorId": "FIJ309",
     //           "sensorType": "vibration",
-    //           "status": "operating",
+    //           "status": "alert",
     //           "gatewayId": "FRH546",
     //           children: null
     //         }]
     //       }]
     //     }]
-    //   }
+    //   },
     // ]
 
     // setTreeViewData(mock)
@@ -108,7 +138,11 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
             />
           </div>
           <div className={styles['dashboard__border']} />
-          <TreeView treeViewData={treeViewData} />
+          <TreeView
+            treeViewData={treeViewData}
+            setComponent={setComponent}
+            component={component}
+          />
         </div>
       )}
       {!isMobile && (
@@ -127,9 +161,20 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
               vibrationSelected={vibrationSelected}
             />
           </div>
-          <div>
-            <TreeView treeViewData={treeViewData} />
-            <AssetsDetail />
+          <div className={styles['dashboard__result']}>
+            <div className={styles['dashboard__result-tree-view']}>
+              <Input
+                placeholder="Buscar Ativo ou Local"
+                onChange={onQueryChange}
+                positionIcon={POSITION_ICON.RIGHT}
+              />
+              <TreeView
+                treeViewData={treeViewData}
+                setComponent={setComponent}
+                component={component}
+              />
+            </div>
+            <AssetsDetail component={component} />
           </div>
         </div>
       )}

@@ -1,27 +1,44 @@
-$border-color: #e1e1e1;
+$border-color: #0000000f;
 $border-width: 1px;
 $gap: clamp(16px, 4vh, 1.5em);
 $top-gap: calc($gap / 2);
 
 .tree-view {
   list-style: none;
-  margin-left: calc($gap / 2);
 
   &__container {
     position: relative;
     padding: $top-gap 0 0 $gap;
+
+    &--not-component {
+      padding-left: 0;
+
+      &:last-child {
+        &::before {
+          width: 0 !important;
+          height: 0 !important;
+        }
+      }
+    }
+
+    &--component {
+      cursor: pointer;
+    }
+
+    &--selected {
+      background-color: #2188ff;
+    }
 
     &:last-child {
       &::before {
         content: '';
         border-left: $border-width solid $border-color;
         border-bottom: $border-width solid $border-color;
-        border-bottom-left-radius: 4px;
         position: absolute;
         left: 0;
         top: 0;
-        width: calc($gap / 1.5);
-        height: calc($top-gap + 1em / 2);
+        width: 16px;
+        height: 18px;
       }
     }
 
@@ -34,6 +51,54 @@ $top-gap: calc($gap / 2);
 
       // vertical connector line
       border-left: $border-width solid $border-color;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    color: #17192d;
+
+    &--selected {
+      color: #ffffff;
+    }
+  }
+
+  &__status-icon {
+    &--operating {
+      > svg {
+        > path,
+        circle {
+          fill: #52c41a;
+        }
+      }
+    }
+
+    &--alert {
+      > svg {
+        > path,
+        circle {
+          fill: #ed3833;
+        }
+      }
+    }
+  }
+
+  &__component-icon {
+    &--selected {
+      > svg {
+        > path {
+          fill: #ffffff;
+        }
+      }
     }
   }
 }

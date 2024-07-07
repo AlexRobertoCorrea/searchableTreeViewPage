@@ -1,5 +1,9 @@
 import React from 'react'
 
-const AssetsDetail = () => <></>
+import { PropsAssetsDetail } from './types'
+
+const AssetsDetail: React.FC<PropsAssetsDetail> = ({ component }) => (
+  <div>{JSON.stringify(component)}</div>
+)
 
 export default AssetsDetail
