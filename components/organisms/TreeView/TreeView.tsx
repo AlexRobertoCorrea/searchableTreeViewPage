@@ -10,7 +10,7 @@ const isLocation = (leaf) => typeof leaf.sensorType === 'undefined'
 
 const isAssets = (leaf) => leaf.sensorType === null
 
-const isComponent = (leaf) => !leaf.children
+const isComponent = (leaf) => !leaf.children && leaf.sensorType
 
 const isOperatingStatus = (leaf) => leaf.status === 'operating'
 

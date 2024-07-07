@@ -3,7 +3,14 @@
 .dashboard {
   @include breakpoint(desktop) {
     border: 8px solid #d8dfe6;
-    height: 100vh;
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
   }
 
   &__search-container {

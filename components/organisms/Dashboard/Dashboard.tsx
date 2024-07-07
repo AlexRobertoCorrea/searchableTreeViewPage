@@ -21,6 +21,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
   const [treeViewData, setTreeViewData] = useState([])
   const [energySelected, setEnergySelected] = useState(false)
   const [vibrationSelected, setVibrationSelected] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const onQueryChange = (event) => {
     setTreeViewData(filterBy(treeViewData, event.target.value))
@@ -38,18 +39,21 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
     setIsMobile(viewport === VIEWPORTS.MOBILE)
 
     const fetchData = async () => {
+      setIsLoading(true)
+
       const companies = await getCompanies()
 
       const companyData = companies.find(
         (company) => company.name.toLowerCase() === unit?.toLowerCase()
       )
-      // setCompany(companyData)
 
       if (companyData) {
         const locations = await getLocations(companyData.id)
         const assets = await getAssets(companyData.id)
 
         setTreeViewData(getTreeViewData(locations, assets))
+
+        setIsLoading(false)
       }
     }
 
@@ -123,7 +127,8 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
 
   return (
     <>
-      {isMobile && unit && (
+      {isLoading && <h1 className={styles['dashboard__loading']}>{'Carregando dados. Esse processo pode demorar um pouco...'}</h1>}
+      {!isLoading && isMobile && unit && (
         <div className={styles['dashboard']}>
           <div className={styles['dashboard__search-container']}>
             <Input
@@ -145,7 +150,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
           />
         </div>
       )}
-      {!isMobile && (
+      {!isLoading &&  !isMobile && (
         <div className={styles['dashboard']}>
           <div className={styles['dashboard__search-container']}>
             <div className={styles['dashboard__title-container']}>
