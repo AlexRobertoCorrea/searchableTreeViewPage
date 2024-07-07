@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Input from '@/components/atoms/Input/Input'
 import DashboardButtons from '@/components/molecules/DashboardButtons/DashboardButtons'
 import TreeView from '@/components/organisms/TreeView/TreeView'
-import AssetsDetail from '@/components/organisms/AssetsDetail/AssetsDetail'
+import ComponentDetail from '@/components/organisms/ComponentDetail/ComponentDetail'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { VIEWPORTS } from '@/constants/breakpoints'
 import { SENSOR_TYPES } from '@/constants/units'
@@ -127,7 +127,11 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
 
   return (
     <>
-      {isLoading && <h1 className={styles['dashboard__loading']}>{'Carregando dados. Esse processo pode demorar um pouco...'}</h1>}
+      {isLoading && (
+        <h1 className={styles['dashboard__loading']}>
+          {'Carregando dados. Esse processo pode demorar um pouco...'}
+        </h1>
+      )}
       {!isLoading && isMobile && unit && (
         <div className={styles['dashboard']}>
           <div className={styles['dashboard__search-container']}>
@@ -150,7 +154,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
           />
         </div>
       )}
-      {!isLoading &&  !isMobile && (
+      {!isLoading && !isMobile && (
         <div className={styles['dashboard']}>
           <div className={styles['dashboard__search-container']}>
             <div className={styles['dashboard__title-container']}>
@@ -179,7 +183,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
                 component={component}
               />
             </div>
-            <AssetsDetail component={component} />
+            <ComponentDetail component={component} />
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 import { PropsComponent } from '@/utils/component'
 
-export interface PropsAssetsDetail {
+export interface PropsComponentDetail {
   component: PropsComponent
 }

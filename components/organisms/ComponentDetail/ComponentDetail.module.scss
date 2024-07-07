@@ -1,0 +1,127 @@
+.component-detail {
+  border: 1px solid #d8dfe6;
+  margin: 12px 8px 16px 16px;
+  flex-basis: 60%;
+
+  &__title-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #d8dfe6;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #24292f;
+  }
+
+  &__status-icon {
+    &--operating {
+      > svg {
+        > path,
+        circle {
+          fill: #52c41a;
+        }
+      }
+    }
+
+    &--alert {
+      > svg {
+        > path,
+        circle {
+          fill: #ed3833;
+        }
+      }
+    }
+  }
+
+  &__asset-block {
+    display: flex;
+    gap: 24px;
+    margin: 24px;
+  }
+
+  &__upload-image {
+    border: 1px dotted #55a6ff;
+    background: #f2f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    padding: 80px;
+  }
+
+  &__upload-image-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #2188ff;
+    margin-top: 2px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #24292f;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #88929c;
+  }
+
+  &__border {
+    border: 1px solid #e3eaef;
+    margin: 24px 0;
+  }
+
+  &__description-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__description-ellipse {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #2188ff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &__sensor-receiver {
+    margin: 24px;
+  }
+
+  &__sensor-receiver-container {
+    display: flex;
+  }
+
+  &__sensor-receiver-detail {
+    flex: 0.5;
+  }
+
+  &__sensor-receiver-data {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

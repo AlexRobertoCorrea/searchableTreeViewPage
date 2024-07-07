@@ -9,6 +9,9 @@ import { ComponentIcon } from '@/components/atoms/Icons/custom/Component'
 import { ArrowDownIcon } from '@/components/atoms/Icons/custom/ArrowDown'
 import { TreeViewVibrationIcon } from '@/components/atoms/Icons/custom/TreeViewVibration'
 import { TreeViewEnergyIcon } from '@/components/atoms/Icons/custom/TreeViewEnergy'
+import { SensorIcon } from '@/components/atoms/Icons/custom/Sensor'
+import { ReceiverIcon } from '@/components/atoms/Icons/custom/Receiver'
+import { AssetDetailIcon } from '@/components/atoms/Icons/custom/AssetDetail'
 
 export const Icons = {
   logo: Logo,
@@ -22,4 +25,7 @@ export const Icons = {
   arrowDownIcon: ArrowDownIcon,
   treeViewVibrationIcon: TreeViewVibrationIcon,
   treeViewEnergyIcon: TreeViewEnergyIcon,
+  sensorIcon: SensorIcon,
+  receiverIcon: ReceiverIcon,
+  assetDetailIcon: AssetDetailIcon,
 }

@@ -3,24 +3,18 @@ import classNames from 'classnames'
 
 import { Icons } from '@/components/atoms/Icons/Icons'
 import { PropsTreeView } from './types'
+import {
+  isLocation,
+  isAssets,
+  isComponent,
+  isOperatingStatus,
+  isAlertStatus,
+  isVibration,
+  isEnergy,
+  isComponentSelected,
+} from '@/utils/componentAnalyser'
 
 import styles from './TreeView.module.scss'
-
-const isLocation = (leaf) => typeof leaf.sensorType === 'undefined'
-
-const isAssets = (leaf) => leaf.sensorType === null
-
-const isComponent = (leaf) => !leaf.children && leaf.sensorType
-
-const isOperatingStatus = (leaf) => leaf.status === 'operating'
-
-const isAlertStatus = (leaf) => leaf.status === 'alert'
-
-const isVibration = (leaf) => leaf.sensorType === 'vibration'
-
-const isEnergy = (leaf) => leaf.sensorType === 'energy'
-
-const isComponentSelected = (leaf, component) => leaf?.id === component?.id
 
 const TreeView: React.FC<PropsTreeView> = ({
   treeViewData,
