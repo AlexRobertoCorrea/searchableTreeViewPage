@@ -55,8 +55,12 @@
   }
 
   &__result-tree-view {
-    flex-basis: 40%;
     margin: 12px 8px 16px 16px;
     border: 1px solid #d8dfe6;
+    flex-basis: 100%;
+
+    @include breakpoint(desktop) {
+      flex-basis: 40%;
+    }
   }
 }

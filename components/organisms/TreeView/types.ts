@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 
-import { PropsComponent } from '@/utils/component'
+import { PropsComponent } from '@/interfaces/component'
 
 export interface PropsTreeView {
   treeViewData: any
