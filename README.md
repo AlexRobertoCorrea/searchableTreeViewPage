@@ -33,6 +33,7 @@ Regarding styling, we use [SASS](https://sass-lang.com/) and the [BEM](https://g
 - Unit tests - I would use [Jest](https://jestjs.io/pt-BR/) with [Testing Library](https://testing-library.com/) because it makes testing easy, efficient and effective;
 - E2E tests - I would prefer to use [Cypress](https://www.cypress.io/) because it is a more JS friendly library;
 - Security issue - the api calls are in the frontend and as they are open, they are exposed. To solve this problem, creating an api via BFF (Backend For Frontend) would be a better option.
+- Performance - when working with a huge data as the apis return, loading the tree view is a very slow task. I suggest loading the tree view with virtualization, I found a lib [react-virtualized-tree](https://github.com/diogofcunha/react-virtualized-tree/) but I didn't test it because it virtualizes and also changes the Ui.
 
 ## Demonstration
 
