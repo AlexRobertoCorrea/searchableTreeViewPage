@@ -65,7 +65,7 @@ const TreeView: React.FC<PropsTreeView> = ({
                   <Icons.componentIcon />
                 </span>
               )}
-              <span
+              <p
                 data-id={leaf.id}
                 className={classNames(styles['tree-view__text'], {
                   [styles['tree-view__text--selected']]: isComponentSelected(
@@ -75,7 +75,7 @@ const TreeView: React.FC<PropsTreeView> = ({
                 })}
               >
                 {leaf.name}
-              </span>
+              </p>
               {isComponent(leaf) && isVibration(leaf) && (
                 <span
                   className={classNames({

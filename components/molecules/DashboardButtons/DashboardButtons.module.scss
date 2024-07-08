@@ -7,13 +7,14 @@
   &__button {
     display: flex;
     align-items: center;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
     color: #77818c;
     background-color: #ffffff;
     border: 1px solid #d8dfe6;
-    padding: 6px 16px 6px 14px;
+    padding: 6px 16px;
     border-radius: 3px;
     gap: 6px;
 
