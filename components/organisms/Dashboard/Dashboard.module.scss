@@ -2,7 +2,7 @@
 
 .dashboard {
   @include breakpoint(desktop) {
-    border: 8px solid #d8dfe6;
+    border: 0.5rem solid #d8dfe6;
   }
 
   &__loading {
@@ -14,38 +14,38 @@
   }
 
   &__search-container {
-    margin: 16px;
+    margin: 1rem;
 
     @include breakpoint(desktop) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 16px 18px;
+      margin: 1rem 1.125rem;
     }
   }
 
   &__title-container {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 0.438rem;
   }
 
   &__title {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 1.75rem;
     color: #24292f;
   }
 
   &__unit-name {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 1.25rem;
     color: #77818c;
   }
 
   &__border {
-    border: 1px solid #eaeef2;
+    border: 0.063rem solid #eaeef2;
   }
 
   &__result {
@@ -55,8 +55,8 @@
   }
 
   &__result-tree-view {
-    margin: 12px 8px 16px 16px;
-    border: 1px solid #d8dfe6;
+    margin: 0.75rem 0.5rem 1rem 1rem;
+    border: 0.063rem solid #d8dfe6;
     flex-basis: 100%;
 
     @include breakpoint(desktop) {

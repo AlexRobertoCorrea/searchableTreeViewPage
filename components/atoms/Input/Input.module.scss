@@ -3,32 +3,32 @@
 
   &__input {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 1.25rem;
     color: #c1c9d2;
     width: -webkit-fill-available;
-    padding-left: 38px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-left: 2.375rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
     background-color: #ffffff;
-    border: 1px solid #d8dfe6;
-    border-radius: 2px;
+    border: 0.063rem solid #d8dfe6;
+    border-radius: 0.125rem;
   }
 
   &__icon {
     position: absolute;
-    left: 16px;
-    top: 10px;
+    left: 1rem;
+    top: 0.625rem;
 
     > svg {
-      width: 12.5px;
-      height: 12.5px;
+      width: 0.781rem;
+      height: 0.781rem;
       color: #363c44;
     }
 
     &--right {
-      right: 16px;
+      right: 1rem;
       left: initial;
     }
   }

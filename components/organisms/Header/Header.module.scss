@@ -11,12 +11,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 48px;
-    padding: 0 16px;
+    height: 3rem;
+    padding: 0 1rem;
   }
 
   &__logo-container {
-    height: 48px;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,23 +28,23 @@
 
   &__buttons-container {
     background-color: white;
-    padding-top: 30px;
+    padding-top: 1.875rem;
 
     @include breakpoint(tablet) {
       background-color: initial;
       padding-top: initial;
       display: flex;
-      gap: 10px;
+      gap: 0.625rem;
     }
   }
 
   &__logo & svg {
-    width: 126px;
-    height: 17px;
+    width: 7.875rem;
+    height: 1.063rem;
 
     @include breakpoint(tablet) {
-      width: 102.95px;
-      height: 14px;
+      width: 6.434rem;
+      height: 0.875rem;
     }
   }
 
@@ -53,38 +53,38 @@
     align-items: center;
     justify-content: left;
     background-color: #023b78;
-    border: 1px solid #023b78;
-    padding: 24px 32px;
-    border-radius: 5px;
-    margin: 0 22px;
+    border: 0.063rem solid #023b78;
+    padding: 1.5rem 2rem;
+    border-radius: 0.313rem;
+    margin: 0 1.375rem;
     width: -webkit-fill-available;
 
     @include breakpoint(tablet) {
-      padding: 4px 8px;
-      border-radius: 2px;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.125rem;
       margin: initial;
       width: auto;
       justify-content: space-between;
     }
 
     > svg {
-      width: 21.11px;
-      height: 16.29px;
+      width: 1.319rem;
+      height: 1.018rem;
 
       @include breakpoint(tablet) {
-        width: 12.31px;
-        height: 9.5px;
+        width: 0.769rem;
+        height: 0.594rem;
       }
     }
 
     &--clicked {
       background-color: #2188ff;
-      border: 1px solid #2188ff;
+      border: 0.063rem solid #2188ff;
     }
   }
 
   &__button:not(:first-child) {
-    margin-top: 40px;
+    margin-top: 2.5rem;
 
     @include breakpoint(tablet) {
       margin-top: initial;
@@ -93,16 +93,16 @@
 
   &__label-button {
     font-family: "Inter", sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
-    line-height: 28px;
+    line-height: 1.75rem;
     color: white;
-    margin-left: 8px;
+    margin-left: 0.5rem;
 
     @include breakpoint(tablet) {
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: 600;
-      line-height: 16px;
+      line-height: 1rem;
     }
   }
 
@@ -114,24 +114,24 @@
 
   &__assets-button {
     background-color: #17192d;
-    border: 1px solid #17192d;
+    border: 0.063rem solid #17192d;
     color: white;
     border-radius: 0;
-    margin-left: 25px;
+    margin-left: 1.563rem;
   }
 
   &__assets-arrow {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   &__assets-title {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem;
     text-align: center;
     color: white;
     margin-left: auto;
     margin-right: auto;
-    padding-right: 25px;
+    padding-right: 1.563rem;
   }
 }
