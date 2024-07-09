@@ -12,9 +12,16 @@ yarn
 
 command.
 
-To run the application, we do 
+To run the application, we do
 
 ```
+yarn dev
+```
+
+To run the project in production mode (for better performance), we do
+
+```
+yarn build
 yarn start
 ```
 
@@ -37,4 +44,4 @@ Regarding styling, we use [SASS](https://sass-lang.com/) and the [BEM](https://g
 
 ## Demonstration
 
-![](docs/demonstration.gif) 
+![](docs/demonstration.gif)

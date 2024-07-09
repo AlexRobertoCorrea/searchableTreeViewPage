@@ -110,7 +110,7 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
                 component={component}
               />
             </div>
-            { !isTablet && <ComponentDetail component={component} />}            
+            {!isTablet && <ComponentDetail component={component} />}
           </div>
         </div>
       )}

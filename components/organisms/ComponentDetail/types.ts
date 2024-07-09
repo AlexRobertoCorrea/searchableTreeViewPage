@@ -1,4 +1,4 @@
-import { PropsComponent } from '@/utils/component'
+import { PropsComponent } from '@/interfaces/component'
 
 export interface PropsComponentDetail {
   component: PropsComponent
