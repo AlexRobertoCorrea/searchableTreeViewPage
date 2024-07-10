@@ -9,6 +9,7 @@ import useMediaQuery from '@/hooks/useMediaQuery'
 import { VIEWPORTS } from '@/constants/breakpoints'
 import { UNITS } from '@/constants/units'
 import { PropsHeader } from './types'
+import { TypeUnitEnum } from '@/enums/unit.enum'
 
 import styles from './Header.module.scss'
 
@@ -21,14 +22,14 @@ const Header: React.FC<PropsHeader> = ({ unit, setUnit }) => {
     setIsMobile(isMobileScreen)
 
     if (!isMobileScreen) {
-      setUnit(UNITS.APEX)
+      setUnit(UNITS.APEX as TypeUnitEnum)
     } else {
       setUnit(null)
     }
   }, [viewport])
 
   const updateUnit = (event: MouseEvent<HTMLButtonElement>) => {
-    setUnit(event.currentTarget.id)
+    setUnit(event?.currentTarget?.id as TypeUnitEnum)
   }
 
   const resetUnit = () => {

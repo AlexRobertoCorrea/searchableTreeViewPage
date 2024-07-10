@@ -1,18 +1,19 @@
-const isLocation = (leaf) => typeof leaf.sensorType === 'undefined'
+const isLocation = (leaf: any) => typeof leaf.sensorType === 'undefined'
 
-const isAssets = (leaf) => leaf.sensorType === null
+const isAssets = (leaf: any) => leaf.sensorType === null
 
-const isComponent = (leaf) => !leaf.children && leaf.sensorType
+const isComponent = (leaf: any) => !leaf.children && leaf.sensorType
 
-const isOperatingStatus = (leaf) => leaf.status === 'operating'
+const isOperatingStatus = (leaf: any) => leaf.status === 'operating'
 
-const isAlertStatus = (leaf) => leaf.status === 'alert'
+const isAlertStatus = (leaf: any) => leaf.status === 'alert'
 
-const isVibration = (leaf) => leaf.sensorType === 'vibration'
+const isVibration = (leaf: any) => leaf.sensorType === 'vibration'
 
-const isEnergy = (leaf) => leaf.sensorType === 'energy'
+const isEnergy = (leaf: any) => leaf.sensorType === 'energy'
 
-const isComponentSelected = (leaf, component) => leaf?.id === component?.id
+const isComponentSelected = (leaf: any, component: any) =>
+  leaf?.id === component?.id
 
 export {
   isLocation,

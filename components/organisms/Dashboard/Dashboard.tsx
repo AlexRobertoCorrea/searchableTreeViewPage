@@ -25,11 +25,11 @@ const Dashboard: React.FC<PropsDashboard> = ({ unit }) => {
   const [vibrationSelected, setVibrationSelected] = useState(false)
   const isLoading = Boolean(!assetsTreeViewData.length)
 
-  const onQueryChange = (event) => {
+  const onQueryChange = (event: any) => {
     setTreeViewData(filterByQuery(assetsTreeViewData, event.target.value))
   }
 
-  const updateSensor = (event) => {
+  const updateSensor = (event: any) => {
     if (event.currentTarget.id === SENSOR_TYPES.energy) {
       setEnergySelected(!energySelected)
     } else {

@@ -12,7 +12,7 @@ const useAssetsTreeViewDataService = (unit: TypeUnitEnum) => {
       const companies = await getCompanies()
 
       const companyData = companies.find(
-        (company) => company.name.toLowerCase() === unit?.toLowerCase()
+        (company: any) => company.name.toLowerCase() === unit?.toLowerCase()
       )
 
       if (companyData) {

@@ -23,7 +23,7 @@ const TreeView: React.FC<PropsTreeView> = ({
 }) => {
   return (
     <ul className={styles['tree-view']}>
-      {(treeViewData || []).map((leaf) =>
+      {(treeViewData || []).map((leaf: any) =>
         leaf.name ? (
           <li
             className={classNames(

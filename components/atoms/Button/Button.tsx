@@ -13,7 +13,7 @@ const Button: React.FC<PropsButton> = ({
   const btnClass = classNames(className, styles['button'])
 
   return (
-    <button className={btnClass} onClick={onClick} id={id}>
+    <button className={btnClass} onClick={onClick} id={id} data-testid="button">
       {children}
     </button>
   )

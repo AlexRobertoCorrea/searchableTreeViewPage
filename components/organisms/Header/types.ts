@@ -3,5 +3,5 @@ import { TypeUnitEnum } from '@/enums/unit.enum'
 
 export interface PropsHeader {
   unit: TypeUnitEnum
-  setUnit: Dispatch<SetStateAction<string>>
+  setUnit: Dispatch<SetStateAction<TypeUnitEnum>>
 }
